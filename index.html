@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
         <script>
@@ -35,7 +35,9 @@
             align-items: flex-start;
             height: 100vh;
             padding-top: 30px;
+            padding-bottom: 30px;
         }
+
 
         /* Container Styles */
         .article-container {
@@ -93,6 +95,23 @@
             text-decoration: underline;
         }
 
+        /* Default styles for desktop */
+        img {
+            max-width: 85%; /* Scale the image to fit the container */
+            height: auto; /* Maintain the aspect ratio */
+            display: block; /* Center images in their containers */
+            margin: 0 auto; /* Center the image horizontally */
+            object-fit: contain; /* Ensure the image fits without distortion */
+        }
+
+        .timeline-image {
+            width: 100%; /* Ensure it scales to fit the container */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Prevent distortion */
+            display: block;
+            margin: 0 auto;
+        }
+
         /* Interactive Map and Graphic Styles */
         .interactive {
             margin: 10px 0;
@@ -101,23 +120,7 @@
             background-color: #fff;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .article-container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-        }
-
-.center {
+        .center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -404,6 +407,175 @@
             font-size: 0.9rem;
         }
 
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    /* Body */
+    body {
+        padding-top: 15px; /* Reduce padding for smaller screens */
+        padding-bottom: 15px;
+        height: auto; /* Allow scrolling if necessary */
+        display: block; /* Avoid flex layout issues on mobile */
+    }
+
+    /* Container Styles */
+    .article-container, .article-section {
+        width: 95%; /* Maximize use of screen width */
+        margin: 0 auto; /* Center content */
+        padding: 15px; /* Reduce padding for smaller screens */
+        box-shadow: none; /* Simplify design for mobile */
+    }
+
+    /* Header Styles */
+    h1 {
+        font-size: 1.5rem; /* Adjust size for mobile readability */
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Paragraph Styles */
+    p {
+        font-size: 0.9rem;
+        line-height: 1.5; /* Adjust for better readability */
+        margin-bottom: 15px;
+    }
+
+    /* Blockquote Styles */
+    blockquote {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        margin: 10px 0;
+    }
+
+    /* Link Styles */
+    a {
+        font-size: 0.9rem;
+    }
+
+    img {
+        max-width: 100%; /* Scale the image to fit the container */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Center images in their containers */
+        margin: -50% auto; /* Center the image horizontally */
+        object-fit: contain; /* Ensure the image fits without distortion */
+    }
+
+
+    .timeline-image {
+        width: 200%; /* Maintain original aspect ratio */
+        height: 100%; /* Extend height for mobile */
+        max-height: 500vh; /* Constrain the height to 80% of the viewport height */
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    /* Interactive Map and Graphics */
+    .map-container {
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .map-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .map-container p {
+        font-size: 0.9rem;
+    }
+
+    /* Front Cover and Quiz Container */
+    .front-cover, .quiz-container {
+        padding: 15px;
+    }
+
+    .front-cover h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .front-cover p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    .start-quiz-button, .restart-quiz-button, #next-question {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        margin-top: 10px;
+    }
+
+    /* Quiz Options */
+    .options button {
+        font-size: 0.9rem;
+        padding: 10px;
+        margin: 8px 0;
+    }
+
+    .feedback {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    /* Timeline */
+    .timeline-container {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .timeline-line {
+        height: 2px; /* Reduce thickness for smaller screens */
+    }
+
+    .timeline-circle {
+        width: 16px;
+        height: 16px;
+    }
+
+    .event-popup {
+        width: 150px; /* Reduce popup size */
+        font-size: 0.8rem;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+        height: 8px;
+    }
+
+    .progress-bar {
+        height: 8px;
+    }
+
+    /* Header */
+    .header {
+        padding: 10px;
+    }
+
+    .header h3 {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.8rem;
+        padding: 5px 0;
+        text-align: center; /* Center footer content */
+    }
+
+    /* Article Section */
+    .article-section h1 {
+        font-size: 1.4rem;
+    }
+
+    .article-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -411,7 +583,7 @@
     <div class="article-container">
 
         <div style="text-align: center;">
-        <img src="images/workplace.jpg" alt="esvins workplace" width="1000" height="500" style="text-align: center;">
+        <img src="images/workplace.jpg" alt="esvins workplace">
         </div>       
         <figcaption style="text-align: center;">Esvin's workplace in Bushwick where he died on July 2023, photo by Yunior Rivas</figcaption>
 
@@ -449,11 +621,11 @@
 
 
         <div style="text-align: center;">
-        <img src="images/graph 1.png" alt="Most common states" width="1000" height="500" style="text-align: center;">
+        <img src="images/graph 1.png" alt="Most common states">
         </div>
 
         <div style="text-align: center;">
-        <img src="images/graph 2.png" alt="TMost common occcupations" width="1000" height="500" style="text-align: center;">
+        <img src="images/graph 2.png" alt="TMost common occcupations">
         </div>
         <figcaption style="text-align: center;">Source: 'OSHA Investigation Summaries', Graphics: Yunior Rivas Garcia</figcaption>
 
@@ -17215,7 +17387,7 @@ Map of Work-Related Heat Incidents in the U.S.
         <div style="text-align: center;">
         <h3 style="text-align: center; font-weight: bold; font-size: 2rem; color: #2d3748;">
         Timeline of Heat-Related Regulations in the U.S.
-        <img src="images/timeline.png" alt="Timeline of work heat place" width="1000" height="1500">
+        <img src="images/timeline.png" alt="Timeline of work heat place" class="timeline-image">
         </div>
         <figcaption style="text-align: center;">Source: Compiled from public and legislative records, Graphic: Yunior Rivas Garcia</figcaption>
         <br>
